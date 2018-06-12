@@ -1,0 +1,30 @@
+.red {
+  background-color:red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+  color:white;
+}
+
+.margin {
+  border-left: 0.1in;
+  padding-left: 5mm;
+  margin-left: 15px;
+}
+
+.margin1 {
+  border-left: 0.1in;
+  padding-left: 1mm;
+  margin-left: 5px;
+}
+
+.margin2 {
+  border-top: 0.2in;
+  padding-top: : 10mm;
+  margin-top: 30px;
+}
