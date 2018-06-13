@@ -1,0 +1,144 @@
+extends layoutBS
+
+block content
+  .margin
+    .margin3
+      h1 Trip Planner
+      hr
+      .jumbotron
+        h1.display-4 Hello
+        p.lead
+         | Welcome to Trip Planner
+        hr.my-4
+        p
+         | Twenty years from now you will be more disappointed by the things you didn't do than by the ones you did.
+         | So throw off the bowlines, sail away from the safe harbor. Catch the trade winds in you sail.
+         | Explore. Dream. Discover.
+         br
+         | -- Mark Twain
+        a.btn.btn-primary.btn-lg(href="#" role="button") Learn more
+      p.font-weight-bold Hot Destinations
+      .container
+        .col
+        .container
+          .row
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/cancun.jpg' width='100%')
+              .card-body
+                h5.card-title Cancun
+                p.card-text
+                  | Cancun is a good place.
+                a.btn.btn-primary(href="#") Explore more
+            .form.col-1
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/pinkbeach.jpg' width='100%')
+              .card-body
+                h5.card-title Harbour Island
+                p.card-text
+                  | Harbour Island is a good place.
+                a.btn.btn-primary(href="#") Explore more
+            .form.col-1
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/havasu.jpg' width='100%')
+              .card-body
+                h5.card-title Havasu Fall
+                p.card-text
+                  | Havasu Fall is a good place.
+                a.btn.btn-primary(href="#") Explore more
+        br
+        br
+        .container
+          .row
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/walla.jpg' width='100%')
+              .card-body
+                h5.card-title Walla Walla Valley
+                p.card-text
+                  | Walla Walla Valley is a good place.
+                a.btn.btn-primary(href="#") Explore more
+            .form.col-1
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/uzbek.jpg' width='100%')
+              .card-body
+                h5.card-title Uzbekistan
+                p.card-text
+                  | Uzbekistan is a good place.
+                a.btn.btn-primary(href="#") Explore more
+            .form.col-1
+            .card.col-3(style="width: 25rem;")
+              img.card-img-topimg(src='/images/albuquerque.jpg' width='100%')
+              .card-body
+                h5.card-title Albuquerque
+                p.card-text
+                  | Albuquerque is a good place.
+                a.btn.btn-primary(href="#") Explore more
+      br
+      br
+      p.font-weight-bold Best Hotels
+        .row
+          .col-4
+            #list-tab.list-group(role="tablist")
+              a#list-home-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list-1" role="tab" aria-controls="home") Nihi Sumba Island, Indonesia
+              a#list-profile-list.list-group-item.list-group-item-action(data-toggle="list" href="#list-2" role="tab" aria-controls="profile") The Brando, Tetiatoa, French Polynesia
+              a#list-messages-list.list-group-item.list-group-item-action(data-toggle="list" href="#list-3" role="tab" aria-controls="messages") Lodge&Spa at Brush Creek Ranch, Saratoga, Wyoming
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list-4" role="tab" aria-controls="settings") Lodge at Kauri Cliffs, Matauri Bay, New Zealand
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list-5" role="tab" aria-controls="settings") Gibb's Farm, Karatu, Tanzania
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list-5" role="tab" aria-controls="settings") More
+          .col-8
+            #nav-tabContent.tab-content
+              #list-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-home-list")
+                |A cluster of rustic-luxe villas perched above a stretch of unspoilt Sumbanese coast, Nihi Sumba hotel feels perched on the edge of the world.
+                |Preserved from urban development, this off-the-beaten-path Indonesian island is an idyllic setting for once-in-a-lifetime romance.
+                br
+                br
+                img.card-img-topimg(src='/images/nihi.jpg' width='50%')
+              #list-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
+                |The Brando is a unique luxury resort on French Polynesia’s breathtakingly beautiful private island of Tetiaroa – an atoll composed of a dozen small islands surrounding a sparkling lagoon 30 miles northeast of Tahiti.
+                br
+                br
+                img.card-img-topimg(src='/images/brando.jpg' width='50%')
+              #list-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-messages-list")
+                |The Lodge & Spa at Brush Creek Ranch, a luxury boutique guest ranch in Saratoga, Wyoming, is the perfect place to unwind and experience life on true working ranch in the Great American West.
+                |From log-hewn buildings to stone fireplaces to plenty of outdoor activities, this Saratoga guest ranch makes every guest feel at home on 30,000 private acres.
+                br
+                br
+                img.card-img-topimg(src='/images/lodgebrush.png' width='50%')
+              #list-4.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                |With sweeping views of the Pacific Ocean, The Lodge at Kauri Cliffs hotel on the North Island of New Zealand entices at every turn.
+                |A four hour drive from Auckland, this hideaway is set in the middle of 6,000 acres near Matauri Bay – overlooking Cape Brett and the Cavalli Islands.
+                br
+                br
+                img.card-img-topimg(src='/images/kauricliff.jpg' width='50%')
+              #list-5.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                |Gibbs farm is not just a stop off point for the Ngorongoro Crater and other nearby safari delights.  It’s a hotel that offers peace, tranquillity and a return to a different way of life!
+                |The guests are actively encouraged to become at one with their surroundings and emerge themselves into the ‘rhythm of the farm’.
+                br
+                br
+                img.card-img-topimg(src='/images/gibbsfarm.jpg' width='50%')
+
+        br
+        p.font-weight-bold Best Airlines
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        p.font-weight-bold Top Reviews
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
