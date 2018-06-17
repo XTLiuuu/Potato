@@ -1,22 +1,24 @@
 extends layoutBS
 
 block content
-  .margin
-    .margin3
-      h1 Trip Planner
-      hr
-      .jumbotron
-        h1.display-4 Hello
-        p.lead
-         | Welcome to Trip Planner
-        hr.my-4
-        p
-         | Twenty years from now you will be more disappointed by the things you didn't do than by the ones you did.
-         | So throw off the bowlines, sail away from the safe harbor. Catch the trade winds in you sail.
-         | Explore. Dream. Discover.
-         br
-         | -- Mark Twain
-        a.btn.btn-primary.btn-lg(href="#" role="button") Learn more
+    .margin
+      .margin3
+        h3 Trip Planner
+        .margin2
+          hr
+          .jumbotron
+            img.card-img-topimg(src='/images/background.jpg' width='40%')
+            h1.display-4 Welcome to Trip Planner
+            hr.my-4
+            p
+             | Like all great travellers, I have seen more than I remember, and remember more than I have seen.
+             br
+             |                                 - Benjamin Disraeli
+             form(method="post")
+              .input-group.mb-3
+                input(name="place").form-control(type="text" placeholder="I want to go ..." length='40%' aria-label="Recipient's username" aria-describedby="basic-addon2")
+                .input-group-append
+                  button.btn.btn-outline-primary(type="search") Search
       p.font-weight-bold Hot Destinations
       .container
         .col
@@ -91,12 +93,12 @@ block content
                 |Preserved from urban development, this off-the-beaten-path Indonesian island is an idyllic setting for once-in-a-lifetime romance.
                 br
                 br
-                img.card-img-topimg(src='/images/nihi.jpg' width='50%')
+                img.card-img-topimg(src='/images/nihi.jpg' width='60%')
               #list-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
                 |The Brando is a unique luxury resort on French Polynesia’s breathtakingly beautiful private island of Tetiaroa – an atoll composed of a dozen small islands surrounding a sparkling lagoon 30 miles northeast of Tahiti.
                 br
                 br
-                img.card-img-topimg(src='/images/brando.jpg' width='50%')
+                img.card-img-topimg(src='/images/brando.jpg' width='60%')
               #list-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-messages-list")
                 |The Lodge & Spa at Brush Creek Ranch, a luxury boutique guest ranch in Saratoga, Wyoming, is the perfect place to unwind and experience life on true working ranch in the Great American West.
                 |From log-hewn buildings to stone fireplaces to plenty of outdoor activities, this Saratoga guest ranch makes every guest feel at home on 30,000 private acres.
@@ -117,14 +119,45 @@ block content
                 img.card-img-topimg(src='/images/gibbsfarm.jpg' width='50%')
 
         br
+        br
         p.font-weight-bold Best Airlines
-        br
-        br
-        br
-        br
-        br
-        br
-        br
+          .row
+            .col-4
+              #list-tab.list-group(role="tablist")
+                a#list-home-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list2-1" role="tab" aria-controls="home") Qatar Airways
+                a#list-profile-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-2" role="tab" aria-controls="profile") Lufthansa
+                a#list-messages-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-3" role="tab" aria-controls="messages") Etihad Airways
+                a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-4" role="tab" aria-controls="settings") Singapore Airlines
+                a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-5" role="tab" aria-controls="settings") South African Airways
+                a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-5" role="tab" aria-controls="settings") More
+            .col-8
+              #nav-tabContent.tab-content
+                #list2-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-home-list")
+                  | The best airline in the world, according to the AirHelp Score, is Qatar Airways, which landed a perfect 10 for quality of service, an 8.86 claim processing score, and an 89% on-time performance score.
+                  br
+                  br
+                  img.card-img-topimg(src='/images/qatar.jpg' width='70%')
+                #list2-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
+                  |The German airline came in second place thanks to its score of 10 for service and 8.63 for claim processing, beat out only due to it 76% punctuality score.
+                  br
+                  br
+                  img.card-img-topimg(src='/images/lufthansa.jpg' width='70%')
+                #list2-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-messages-list")
+                  |The UAE's Etihad is constantly named among the best airlines in the world, and with a score of 9 on service, 86% for punctuality, and 7.47 for claim processing, it's easy to see why.
+                  br
+                  br
+                  img.card-img-topimg(src='/images/etihad.jpg' width='60%')
+                #list2-4.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                  |Set to launch the longest flight in the world at 19 hours from Singapore to New York, it's lucky Singapore's airline offers a full 10/10 for quality of service, as well as 85% on-time performance. Only its claim processing score — 6.77 — brought it down to fourth place this year.
+                  br
+                  br
+                  img.card-img-topimg(src='/images/singapore.jpg' width='70%')
+                #list2-5.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                  | The 8.69 claim processing score, 8 on service, and 85% on-time performance put South Africa's airline in fifth place.
+                  br
+                  br
+                  img.card-img-topimg(src='/images/southafrica.jpg' width='70%')
+
         br
         br
         br

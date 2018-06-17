@@ -9,7 +9,7 @@ block content
       br
       .container
         .row
-          form(method="post" action="/cssdemo").col-5
+          form(method="post" action="/newtrip").col-5
             p.font-weight-bold Sign Into My Account
             .form-group
               label(for="exampleInputEmail1") Username
@@ -23,7 +23,7 @@ block content
               label.form-check-label(for="exampleCheck1") Keep me signed in
             button.btn.btn-primary(type="submit") Sign in
           form.col-1
-          form(method="post").col-5
+          form(method="post" action="/newtrip").col-5
             p.font-weight-bold Create New Account
             .form-group
               label(for="exampleInputEmail1") Username

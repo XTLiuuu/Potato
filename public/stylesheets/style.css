@@ -11,14 +11,19 @@
   color:white;
 }
 
+.jumbotron{
+  background-color: lightblue;
+  background-size: cover
+}
+
 .margin {
-  border-left: 0.1in solid grey;
+  border-left: 0.1in;
   padding-left: 5mm;
   margin-left: 15px;
 }
 
 .margin1 {
-  border-left: 0.1in solid grey;
+  border-left: 0.1in;
   padding-left: 1mm;
   margin-left: 5px;
 }
@@ -30,13 +35,13 @@
 }
 
 .margin3 {
-  border-right: 0.1in solid grey;
+  border-right: 0.1in;
   padding-right: 5mm;
   margin-right: 15px;
 }
 
 .margin4 {
-  border-bottom: : 0.2in solid grey;
+  border-bottom: : 0.2in;
   padding-bottom: : 10mm;
   margin-bottom: 30px;
 }

@@ -1,0 +1,212 @@
+extends layoutBS
+
+block content
+  .margin
+    h1 Hotel Review
+    p Welcome to hotel review
+
+    br
+    br
+    form(method="post" action="saveHotelReview")
+      .form-row
+        .formGroup.col-2
+          label Overall Rating 
+        .formGroup.col-4
+          select(name="rating").form-control.form-control-sm
+            option(selected="") Choose...
+            option 1
+            option 2
+            option 3
+            option 4
+            option 5
+      br
+      .form-row
+        .formGroup.col-2
+          label Review Title 
+        .formGroup.col-8
+          input.form-control.form-control-sm(type="text" name="reviewTitle" rows="1" placeholder="Please summarize your hotel visit")
+      br
+      br
+      .form-row
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-4
+              label Hotel Name 
+            .formGroup.col-6
+              input.form-control.form-control-sm(type="text" name="hotelName" placeholder="e.g. Hilton")
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-4
+              label Room type
+            .formGroup.col-6
+              input.form-control.form-control-sm(type="text" name="roomType" placeholder="e.g. Luxury double room")
+      br
+      .form-row
+        .formGroup.col-6
+          .form-row
+            .form.col-4
+              label Location 
+            .form.col-6
+              input.form-control.form-control-sm(type="text" name="country" placeholder="e.g. U.S.")
+        .formGroup.col-6
+            .form-row
+              .form.col-3
+                label City
+              .form.col-6  
+                input.form-control.form-control-sm(type="text" name="city" placeholder="e.g. New York")
+      br
+      .form-row
+        .formGroup.col-2
+          label Trip purpose 
+        .formGroup.col-4
+          select.form-control.form-control-sm(name="purpose").form-control
+            option(selected="") Choose...
+            option Business 
+            option Couples 
+            option Family 
+            option Friends
+            option Solo
+            option Other 
+      br
+      label Your review
+      br
+      textarea(name="review" rows="8" cols="80")
+      br
+      br
+      .form-row
+        .formGroup.col-3
+          label When did you visit? 
+        .formGroup.col-6
+          select.form-control.form-control-sm(name="time").form-control
+            option(selected="") Choose...
+            option in a week 
+            option in a month 
+            option in six months
+            option in a year 
+            option more than a year 
+      br
+      .form-row
+        .formGroup-col-3
+          label Do you have photos to share? 
+        .formGroup.col-6
+          input.form-control-file(type="file" name="photo")
+      br
+      br
+      h5.font-weight-bold.text-lg Would you like to provide more info? 
+      br
+      .form-row
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-2
+              label Service 
+            .formGroup.col-7
+              select(name="service").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-3
+              label Location 
+            .formGroup.col-7
+              select(name="location").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+      br
+      .form-row
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-2
+              label Food 
+            .formGroup.col-7
+              select(name="food").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-3
+              label Value
+            .formGroup.col-7
+              select(name="value").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+      br
+      .form-row
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-2
+              label Cleanienss  
+            .formGroup.col-7
+              select(name="cleanienss").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+        .formGroup.col-6
+          .form-row
+            .formGroup.col-3
+              label Entertainment 
+            .formGroup.col-7
+              select(name="entertainment").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+      input.btn.btn-primary.btn-lg(type="submit")
+    br
+    br
+    br
+    hr
+    h1 User Reviews 
+    form(method="post" action="deleteHotelReview")
+      ol
+        each review in hotelReviews
+          li
+            input(name="deleteHotelReview" value=review.reviewTitle type="checkbox")
+            b 
+             | #{review.reviewTitle} 
+            br
+            e Rating: #{review.rating}
+            br
+            e Hotel Name: #{review.hotelName}
+            br
+            e Room Type: #{review.roomType}
+            br
+            e city #{review.city}, #{review.country}
+            br
+            e Travel Purpose: #{review.purpose}
+            br
+            e Travel Time: #{review.time}
+            br
+            e Reviews: #{review.review}
+            br
+            e Photo: #{review.photo}
+            br
+            b Other info:
+            br
+            e Service: #{review.service} Location: #{review.location} 
+            br
+            e Food: #{review.food} Value: #{review.value} 
+            br
+            e Cleanienss: #{review.cleanienss} Entertainment: #{review.entertainment} 
+      input(type="submit" value="Delete checked items")
+      hr

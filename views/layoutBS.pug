@@ -19,12 +19,9 @@ html(lang="en")
           li.nav-item.dropdown
             a#navbarDropdown.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Trip review
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="#") Flights
-              a.dropdown-item(href="#") Hotel
-              .dropdown-driver
-              a.dropdown-item(href="#") Others
-        li.nav-item
-          a.nav-link.active(href="/destination") Popular destination
+              a.dropdown-item(href="/reviews") Flights
+              a.dropdown-item(href="/hotelReviews") Hotel
+              a.dropdown-item(href="/users") Others
         li.nav-item
           a.nav-link.active(href="/signin") Log in
     block content

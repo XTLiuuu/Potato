@@ -10,21 +10,21 @@ block content
         form(method="post")
           .form-row
             .form-group.col-md-6
-              label(for="inputEmail4") Destination
-              input.form-control(name="country" type="text" placeholder="Country")
+              label(for="destination") Destination
+              input#destination.form-control(name="country" type="text" placeholder="Country")
             .form-group.col-md-6
-              label(for="inputPassword4") --
-              input.form-control(name="city" type="text" placeholder="City")
+              label(for="city") City 
+              input#city.form-control(name="city" type="text" placeholder="City")
           .form-row
             .form-group.col-md-6
-              label(for="inputDepature") Departure Date
-              input.form-control(name="depdate" type="date" placeholder="06.10.2018")
+              label(for="departDate") Departure Date
+              input#departDate.form-control(name="depdate" type="date" placeholder="06.10.2018")
             .form-group.col-md-6
-              label(for="inputArrival") Return Date
-              input#inputPassword4.form-control(name="retdate" type="date" placeholder="06.10.2018")
+              label(for="returnDate") Return Date
+              input#returnDate.form-control(name="retdate" type="date" placeholder="06.10.2018")
           .form-group
-            label(for="inputtext") Hotel
-            select(name="hotel")#inputState.form-control
+            label(for="hotel") Hotel
+            select#hotel(name="hotel").form-control
               option(selected="") Choose...
               option Hilton
               option Sheraton
@@ -48,8 +48,8 @@ block content
               option Conrad
               option Peninsula
           .form-group
-            label(for="inputtext") Airline
-            select(name="airline")#inputState.form-control
+            label(for="airline") Airline
+            select#airline(name="airline").form-control
               option(selected="") Choose...
               option Asiana Airline
               option Air New Zealand
@@ -73,8 +73,8 @@ block content
               option Turkish Airlines
               option Virgin Australia
           .form-group
-            label(for="inputHotel") Travel purpose
-            input#inputCity.form-control(name="purpose" type="text")
+            label(for="purpose") Travel purpose
+            input#purpose.form-control(name="purpose" type="text")
           button.btn.btn-primary.btn-lg(type="submit") Go
       br
       br
