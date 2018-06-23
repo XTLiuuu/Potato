@@ -3,7 +3,11 @@ const mongoose = require( 'mongoose' );
 
 var userSchema = mongoose.Schema( {
   name: String,
-  password: String
+  password: String,
+  googleid: String,
+  googletoken: String,
+  googlename:String,
+  googleemail:String,
 } );
 
 module.exports = mongoose.model( 'User', userSchema );

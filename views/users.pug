@@ -1,23 +1,10 @@
 extends layoutBS
 
 block content
-  h1 Add a User
-  form(method="post" action="saveUser")
-    .formGroup
-      label user name
-      input(type="text" name="name")
-    .formGroup
-      label password
-      input(name="password" rows="10" cols="80")
-    input(type="submit")
-  hr
-  h1 List of All users
-  form(method="post" action="deleteUser")
-    ol
-      each user in users
-        li 
-          input(name="deleteName" value=user.name type="checkbox")
-          e #{user.name} 
-          e #{user.password}
-    input(type="submit" value="Delete checked items")
-    hr
+
+  h1 Trip Planner Users 
+
+  ul
+    each u in users
+      li
+        a(href="/users/"+u._id) #{u.googlename}

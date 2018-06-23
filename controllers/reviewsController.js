@@ -14,7 +14,7 @@ exports.getAllReviews = ( req, res ) => {
       res.render( 'reviews', {
         reviews: reviews
       } );
-    } )
+    } ) 
     .catch( ( error ) => {
       console.log( error.message );
       return [];

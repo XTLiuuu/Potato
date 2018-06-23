@@ -1,17 +1,15 @@
 'use strict';
-const User = require( '../models/User' );
+const User = require( '../models/user' );
+const mongo = require('mongodb');
 console.log("loading the users Controller")
 
 
-// this displays all of the users
+// this displays all of the skills
 exports.getAllUsers = ( req, res ) => {
   console.log('in getAllUsers')
   User.find( {} )
     .exec()
-    //this is a function takes one parameter (function) and does this
     .then( ( users ) => {
-      console.log("users = ")
-      console.dir(users)
       res.render( 'users', {
         users: users
       } );
@@ -21,50 +19,42 @@ exports.getAllUsers = ( req, res ) => {
       return [];
     } )
     .then( () => {
-      console.log( 'user promise complete' );
+      console.log( 'getUsers promise complete' );
     } );
 };
 
-
-exports.saveUser = ( req, res ) => {
-  console.log("in saveUser!")
-  console.dir(req)
-  let newUser = new User( {
-    name: req.body.name,
-    password: req.body.password
-  } )
-
-  console.log("user = "+newUser)
-
-  newUser.save()
-    .then( () => {
-      res.redirect( '/users' );
+exports.getUser = ( req, res ) => {
+  const objId = new mongo.ObjectId(req.params.id)
+  User.findOne(objId) //{"_id": objId})
+    .exec()
+    .then( ( user ) => {
+      res.render( 'user', {
+        user: user
+      } );
     } )
-    .catch( error => {
-      res.send( error );
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'getUser promise complete' );
     } );
 };
 
-exports.deleteUser = (req, res) => {
-  console.log("in deleteUser")
-  let userName = req.body.deleteName
-  //check what users select to delete
-  if (typeof(userName)=='string') {
-      User.deleteOne({name:userName})
-           .exec()
-           .then(()=>{res.redirect('/users')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(userName)=='object'){
-      User.deleteMany({name:{$in:userName}})
-           .exec()
-           .then(()=>{res.redirect('/users')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(userName)=='undefined'){
-      console.log("This is if they didn't select a user")
-      res.redirect('/users')
-  } else {
-    console.log("This shouldn't happen!")
-    res.send(`unknown userName: ${userName}`)
-  }
-
+exports.attachUser = ( req, res, next ) => {
+  console.log('in attachEvidence')
+  const objId = new mongo.ObjectId(req.params.id)
+  User.findOne(objId) //{"_id": objId})
+    .exec()
+    .then( ( user ) => {
+      res.locals.user = user
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'attachUser promise complete' );
+    } );
 };

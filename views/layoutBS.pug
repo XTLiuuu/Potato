@@ -21,9 +21,20 @@ html(lang="en")
             .dropdown-menu(aria-labelledby="navbarDropdown")
               a.dropdown-item(href="/reviews") Flights
               a.dropdown-item(href="/hotelReviews") Hotel
-              a.dropdown-item(href="/users") Others
-        li.nav-item
-          a.nav-link.active(href="/signin") Log in
+          li.nav-item
+            a#navbarDropdown.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") My account 
+            .dropdown-menu(aria-labelledby="navbarDropdown")
+              a.dropdown-item(href="#") Profile
+              a.dropdown-item(href="#") Browse History 
+              a.dropdown-item(href="#") Favorate
+              a.dropdown-item(href="#") My Reviews 
+              if loggedIn
+                if status=='0211'
+                  a.dropdown-item(href="/users") Google Users
+                  a.dropdown-item(href="/sysUsers") System Users
+                a.dropdown-item(href="/logout") Logout
+              else
+                a.dropdown-item(href="/signin") Sign in
     block content
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
