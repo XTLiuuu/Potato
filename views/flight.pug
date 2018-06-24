@@ -1,0 +1,142 @@
+extends layoutBS
+
+block content
+    .body
+      .margin
+        h2.text-monospace Potato
+          .margin2
+        hr
+        br
+        h3.text-monospace.font-weight-bold Flights
+        br
+        .jumbotron
+          form.text-monospace(method="post")
+            .form-row
+              .form-group.col-md-5
+                label(for="depart") From
+                input.text-monospace#destination.form-control(name="depart" type="text" placeholder="e.g. Boston")
+              .form-group.col-md-2
+              .form-group.col-md-5
+                label(for="arrive") To 
+                input.text-monospace#city.form-control(name="arrive" type="text" placeholder="e.g. New York")
+            .form-row
+              .form-group.col-md-5
+                label(for="departDate") Departure Date
+                input#departDate.form-control(name="depdate" type="date" placeholder="06.10.2018")
+              .form-group.col-md-2
+              .form-group.col-md-5
+                label(for="returnDate") Return Date
+                input#returnDate.form-control(name="retdate" type="date" placeholder="06.10.2018")
+            .form-group
+              label(for="airline") Airline
+              select.text-monospace#airline(name="airline").form-control
+                option(selected="") Choose...
+                option Asiana Airline
+                option Air New Zealand
+                option Air France
+                option Austrian Airlines
+                option All Nippon Airlines
+                option Cathay Pacific Airways
+                option Delta Air Lines
+                option Etihad Airways
+                option EVA Air
+                option JetBlue
+                option Hainan Airline
+                option Lufthansa
+                option Japan Airlines
+                option Qantas Airline
+                option Qatar Airways
+                option Singapore Airlines
+                option Swiss International Air Lines
+                option United Airlines
+                option Thai Airways
+                option Turkish Airlines
+                option Virgin Australia
+            .form-row
+              .form-group.col-md-6
+                label Flight Number
+                input.form-control(name="flight" type="text" placeholder="e.g. HU481")
+              .form-group.col-md-6
+                label Travellers
+                select(name="travellers").form-control
+                  option(selected="") Choose...
+                  option 1
+                  option 2
+                  option 3
+                  option 4
+                  option 5+
+            button.btn.btn-warning.btn-lg(type="submit") Go
+        br
+        hr
+        h5.font-weight-bold.text-monospace Best Airlines
+        br
+        .row
+          .col-4
+            #list-tab.list-group.text-monospace(role="tablist")
+              a#list-home-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list2-1" role="tab" aria-controls="home") Qatar Airways
+              a#list-profile-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-2" role="tab" aria-controls="profile") Lufthansa
+              a#list-messages-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-3" role="tab" aria-controls="messages") Etihad Airways
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-4" role="tab" aria-controls="settings") Singapore Airlines
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-5" role="tab" aria-controls="settings") South African Airways
+          .col-8
+            #nav-tabContent.text-monospace.tab-content
+              #list2-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-home-list")
+                | The best airline in the world, according to the AirHelp Score, is Qatar Airways, which landed a perfect 10 for quality of service, an 8.86 claim processing score, and an 89% on-time performance score.
+                br
+                br
+                img.card-img-topimg(src='/images/qatar.jpg' width='70%')
+              #list2-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
+                |The German airline came in second place thanks to its score of 10 for service and 8.63 for claim processing, beat out only due to it 76% punctuality score.
+                br
+                br
+                img.card-img-topimg(src='/images/lufthansa.jpg' width='70%')
+              #list2-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-messages-list")
+                |The UAE's Etihad is constantly named among the best airlines in the world, and with a score of 9 on service, 86% for punctuality, and 7.47 for claim processing, it's easy to see why.
+                br
+                br
+                img.card-img-topimg(src='/images/etihad.jpg' width='60%')
+              #list2-4.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                |Set to launch the longest flight in the world at 19 hours from Singapore to New York, it's lucky Singapore's airline offers a full 10/10 for quality of service, as well as 85% on-time performance. Only its claim processing score — 6.77 — brought it down to fourth place this year.
+                br
+                br
+                img.card-img-topimg(src='/images/singapore.jpg' width='70%')
+              #list2-5.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
+                | The 8.69 claim processing score, 8 on service, and 85% on-time performance put South Africa's airline in fifth place.
+                br
+                br
+                img.card-img-topimg(src='/images/southafrica.jpg' width='70%')
+
+        br
+        br
+        br
+        hr
+        h3.text-monospace.font-weight-bold Top Reviews
+        .row
+          .col-10
+          .col-2
+            a.text-warning.text-monospace(href="/reviews") Write a review           
+        form.text-monospace(method="post")
+          ol
+            each review in reviews
+              .jumbotron
+                i #{review.name} - (#{review.flightnumber}, From #{review.origin}, To #{review.destination})
+                .row
+                  .col-4
+                    b #{review.reviewTitle}
+                  .col-2 
+                    b Rating: #{review.rating}
+                  .col-5
+                    i  #{review.cabin} class, #{review.airline}
+                e Reviews: #{review.review}
+                br
+                e Photo: #{review.photo}
+                br
+                b Other Info
+                br 
+                e Legroom: #{review.legroom} Seat Comfort: #{review.seatComfort}
+                br
+                e Cleaniess: #{review.cleaniess} Service: #{review.service}
+                br
+                e Food: #{review.food} Entertainment: #{review.entertainment}
+                br
+                br

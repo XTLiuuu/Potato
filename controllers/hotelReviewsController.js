@@ -24,20 +24,20 @@ exports.getAllHotelReviews = ( req, res ) => {
     } );
 };
 
-
 exports.saveHotelReview = ( req, res ) => {
   console.log("in saveHotelReview!")
   console.dir(req)
   let newHotelReview = new hotelReview ({
+    user: req.user.googleemail,
+    name: req.user.googlename,
     rating: req.body.rating,
     reviewTitle: req.body.reviewTitle,
     hotelName: req.body.hotelName,
-    roomType: req.body.roomType,
-    country: req.body.country,
+    brand: req.body.brand,
+    state: req.body.state,
     city: req.body.city,
     purpose: req.body.purpose,
     review: req.body.review,
-    time: req.body.time,
     photo: req.body.photo,
     service: req.body.service,
     location: req.body.location,
@@ -51,33 +51,9 @@ exports.saveHotelReview = ( req, res ) => {
 
   newHotelReview.save()
     .then( () => {
-      res.redirect( '/hotelReviews' );
+      res.redirect( '/hotel' );
     } )
     .catch( error => {
       res.send( error );
     } );
-};
-
-exports.deleteHotelReview = (req, res) => {
-  console.log("in deleteHotelReview")
-  let reviewName = req.body.deleteHotelReview
-  //check what reviews select to delete
-  if (typeof(reviewName)=='string') {
-      hotelReview.deleteOne({reviewTitle:reviewName})
-           .exec()
-           .then(()=>{res.redirect('/hotelReviews')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(reviewName)=='object'){
-      Review.deleteMany({name:{$in:reviewName}})
-           .exec()
-           .then(()=>{res.redirect('/hotelReviews')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(reviewName)=='undefined'){
-      console.log("This is if they didn't select a review")
-      res.redirect('/hotelReviews')
-  } else {
-    console.log("This shouldn't happen!")
-    res.send(`unknown reviewName: ${reviewName}`)
-  }
-
 };

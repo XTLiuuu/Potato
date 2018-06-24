@@ -2,6 +2,8 @@
 const mongoose = require( 'mongoose' );
 
 var reviewSchema = mongoose.Schema( {
+  name: String,
+  email: String,
   rating: Number,
   reviewTitle: String,
   airline: String,

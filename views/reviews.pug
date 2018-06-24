@@ -1,230 +1,202 @@
 extends layoutBS
 
 block content
-  .margin
-    h1 Flight Review
-    p Welcome to flight review
+    .body
+      .margin
+        h2.text-monospace Potato
+        .margin2
+        hr
+        br    
+        h4.text-monospace Flight Review
 
-    br
-    br
-    form(method="post" action="saveReview")
-      .form-row
-        .formGroup.col-2
-          label Overall Rating 
-        .formGroup.col-4
-          select(name="rating").form-control.form-control-sm
-            option(selected="") Choose...
-            option 1
-            option 2
-            option 3
-            option 4
-            option 5
-      br
-      .form-row
-        .formGroup.col-2
-          label Review Title 
-        .formGroup.col-8
-          input.form-control.form-control-sm(type="text" name="reviewTitle" rows="1" placeholder="Please summarize your flight experience")
-      br
-      br
-      .form-row
-        .formGroup.col-6
+        br
+        br
+        form.text-monospace(method="post" action="saveReview")
           .form-row
+            .formGroup.col-2
+              label Overall Rating 
             .formGroup.col-4
-              label Airline company
+              select(name="rating").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+          br
+          .form-row
+            .formGroup.col-2
+              label Review Title 
+            .formGroup.col-8
+              input.form-control.form-control-sm(type="text" name="reviewTitle" rows="1" placeholder="Please summarize your flight experience")
+          br
+          br
+          .form-row
             .formGroup.col-6
-              select(name="airline").form-control.form-control-sm
-                option(selected="") Choose...
-                option Asiana Airline
-                option Air New Zealand
-                option Air France
-                option Austrian Airlines
-                option All Nippon Airlines
-                option Cathay Pacific Airways
-                option Delta Air Lines
-                option Etihad Airways
-                option EVA Air
-                option JetBlue
-                option Hainan Airline
-                option Lufthansa
-                option Japan Airlines
-                option Qantas Airline
-                option Qatar Airways
-                option Singapore Airlines
-                option Swiss International Air Lines
-                option United Airlines
-                option Thai Airways
-                option Turkish Airlines
-                option Virgin Australia
-        .formGroup.col-6
+              .form-row
+                .formGroup.col-4
+                  label Airline company
+                .formGroup.col-6
+                  select(name="airline").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option Asiana Airline
+                    option Air New Zealand
+                    option Air France
+                    option Austrian Airlines
+                    option All Nippon Airlines
+                    option Cathay Pacific Airways
+                    option Delta Air Lines
+                    option Etihad Airways
+                    option EVA Air
+                    option JetBlue
+                    option Hainan Airline
+                    option Lufthansa
+                    option Japan Airlines
+                    option Qantas Airline
+                    option Qatar Airways
+                    option Singapore Airlines
+                    option Swiss International Air Lines
+                    option United Airlines
+                    option Thai Airways
+                    option Turkish Airlines
+                    option Virgin Australia
+            .formGroup.col-6
+              .form-row
+                .form.col-3
+                  label Flight number  
+                .form.col-6
+                  input.form-control.form-control-sm(type="text" name="flightnumber" placeholder="e.g. HU481")
+          br
           .form-row
-            .form.col-3
-              label Flight number  
-            .form.col-6
-              input.form-control.form-control-sm(type="text" name="flightnumber" placeholder="e.g. HU481")
-      br
-      .form-row
-        .formGroup.col-6
-          .form-row
-            .form.col-4
-              label Origin 
-            .form.col-6
-              input.form-control.form-control-sm(type="text" name="origin" placeholder="flying from ...")
-        .formGroup.col-6
-            .form-row
-              .form.col-3
-                label Destination
-              .form.col-6  
-                input.form-control.form-control-sm(type="text" name="destination" placeholder="flying to ...")
-      br
-      .form-row
-        .formGroup.col-2
-          label Class of service  
-        .formGroup.col-4
-          select.form-control.form-control-sm(name="cabin").form-control
-            option(selected="") Choose...
-            option Economy
-            option Prem Economy
-            option Business
-            option First Class
-      br
-      label Your review
-      br
-      textarea(name="review" rows="8" cols="80")
-      br
-      br
-      .form-row
-        .formGroup.col-3
-          label When did you take the flight? 
-        .formGroup.col-6
-          select.form-control.form-control-sm(name="time").form-control
-            option(selected="") Choose...
-            option in a week 
-            option in a month 
-            option in six months
-            option in a year 
-            option more than a year 
-      br
-      .form-row
-        .formGroup-col-3
-          label Do you have photos to share? 
-        .formGroup.col-6
-          input.form-control-file(type="file" name="photo")
-      br
-      br
-      h5.font-weight-bold.text-lg Would you like to provide more info? 
-      br
-      .form-row
-        .formGroup.col-6
+            .formGroup.col-6
+              .form-row
+                .form.col-4
+                  label Origin 
+                .form.col-6
+                  input.form-control.form-control-sm(type="text" name="origin" placeholder="flying from ...")
+            .formGroup.col-6
+                .form-row
+                  .form.col-3
+                    label Destination
+                  .form.col-6  
+                    input.form-control.form-control-sm(type="text" name="destination" placeholder="flying to ...")
+          br
           .form-row
             .formGroup.col-2
-              label Legroom 
-            .formGroup.col-7
-              select(name="legroom").form-control.form-control-sm
+              label Class of service  
+            .formGroup.col-4
+              select.form-control.form-control-sm(name="cabin").form-control
                 option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-        .formGroup.col-6
+                option Economy
+                option Prem Economy
+                option Business
+                option First Class
+          br
+          label Your review
+          br
+          textarea(name="review" rows="8" cols="80")
+          br
+          br
           .form-row
             .formGroup.col-3
-              label Seat comfort  
-            .formGroup.col-7
-              select(name="seatComfort").form-control.form-control-sm
+              label When did you take the flight? 
+            .formGroup.col-6
+              select.form-control.form-control-sm(name="time").form-control
                 option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-      br
-      .form-row
-        .formGroup.col-6
+                option in a week 
+                option in a month 
+                option in six months
+                option in a year 
+                option more than a year 
+          br
           .form-row
-            .formGroup.col-2
-              label Cleaniess 
-            .formGroup.col-7
-              select(name="cleaniess").form-control.form-control-sm
-                option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-        .formGroup.col-6
+            .formGroup-col-3
+              label Do you have photos to share? 
+            .formGroup.col-6
+              input.form-control-file(type="file" name="photo")
+          br
+          br
+          h5.font-weight-bold.text-lg Would you like to provide more info? 
+          br
           .form-row
-            .formGroup.col-3
-              label Flight Service
-            .formGroup.col-7
-              select(name="service").form-control.form-control-sm
-                option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-      br
-      .form-row
-        .formGroup.col-6
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Legroom 
+                .formGroup.col-7
+                  select(name="legroom").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Seat comfort  
+                .formGroup.col-7
+                  select(name="seatComfort").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
           .form-row
-            .formGroup.col-2
-              label Food 
-            .formGroup.col-7
-              select(name="food").form-control.form-control-sm
-                option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-        .formGroup.col-6
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Cleaniess 
+                .formGroup.col-7
+                  select(name="cleaniess").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Flight Service
+                .formGroup.col-7
+                  select(name="service").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
           .form-row
-            .formGroup.col-3
-              label In-Flight Entertainment 
-            .formGroup.col-7
-              select(name="entertainment").form-control.form-control-sm
-                option(selected="") Choose...
-                option 1
-                option 2
-                option 3
-                option 4
-                option 5
-      input.btn.btn-primary.btn-lg(type="submit")
-    br
-    br
-    br
-    hr
-    h1 User Reviews 
-    form(method="post" action="deleteReview")
-      ol
-        each review in reviews
-          li
-            input(name="deleteReview" value=review.reviewTitle type="checkbox")
-            b 
-             | #{review.reviewTitle} 
-            br
-            e Rating: #{review.rating}
-            br
-            e Airline: #{review.airline}
-            br
-            e Flight Number: #{review.flightnumber}
-            br
-            e From #{review.origin} To #{review.destination}
-            br
-            e Class: #{review.cabin}
-            br
-            e Travel Time: #{review.time}
-            br
-            e Reviews: #{review.review}
-            br
-            e Photo: #{review.photo}
-            br
-            b Other info:
-            br
-            e Legroom: #{review.legroom} Seat Comfort: #{review.seatComfort} Cleaniess: #{review.cleaniess} 
-            br
-            e Service: #{review.service} Food: #{review.food} Entertainment: #{review.entertainment}
-      input(type="submit" value="Delete checked items")
-      hr
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Food 
+                .formGroup.col-7
+                  select(name="food").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label In-Flight Entertainment 
+                .formGroup.col-7
+                  select(name="entertainment").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
+          input.btn.btn-warning.btn-lg(type="submit" value="GO")
+        br
+        br
+        br

@@ -14,7 +14,7 @@ exports.getAllReviews = ( req, res ) => {
       res.render( 'reviews', {
         reviews: reviews
       } );
-    } ) 
+    } )
     .catch( ( error ) => {
       console.log( error.message );
       return [];
@@ -29,6 +29,8 @@ exports.saveReview = ( req, res ) => {
   console.log("in saveReview!")
   console.dir(req)
   let newReview = new Review ({
+    user: req.user.googleemail,
+    name: req.user.googlename,
     rating: req.body.rating,
     reviewTitle: req.body.reviewTitle,
     airline: req.body.airline,
@@ -51,33 +53,9 @@ exports.saveReview = ( req, res ) => {
 
   newReview.save()
     .then( () => {
-      res.redirect( '/reviews' );
+      res.redirect( '/flight' );
     } )
     .catch( error => {
       res.send( error );
     } );
-};
-
-exports.deleteReview = (req, res) => {
-  console.log("in deleteReview")
-  let reviewName = req.body.deleteReview
-  //check what reviews select to delete
-  if (typeof(reviewName)=='string') {
-      Review.deleteOne({reviewTitle:reviewName})
-           .exec()
-           .then(()=>{res.redirect('/reviews')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(reviewName)=='object'){
-      Review.deleteMany({name:{$in:reviewName}})
-           .exec()
-           .then(()=>{res.redirect('/reviews')})
-           .catch((error)=>{res.send(error)})
-  } else if (typeof(reviewName)=='undefined'){
-      console.log("This is if they didn't select a review")
-      res.redirect('/reviews')
-  } else {
-    console.log("This shouldn't happen!")
-    res.send(`unknown reviewName: ${reviewName}`)
-  }
-
 };

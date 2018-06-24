@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var mainRouter = require('./routes/main');
 var newtripRouter = require('./routes/newtrip');
-var flightreviewRouter = require('./routes/flightreview');
 var hotelreviewRouter = require('./routes/hotelreview');
 var usersRouter = require('./routes/users');
 var signinRouter = require('./routes/signin');
@@ -17,6 +16,11 @@ const session = require("express-session")
 const bodyParser = require("body-parser");
 
 const sysUsersController = require('./controllers/sysUsersController')
+const profileController = require('./controllers/profileController')
+const flightController = require('./controllers/flightController')
+const flightController1 = require('./controllers/flightController1')
+const hotelController = require('./controllers/hotelController')
+const hotelController1 = require('./controllers/hotelController1')
 const usersController = require('./controllers/usersController')
 const reviewsController = require('./controllers/reviewsController')
 const hotelReviewsController = require('./controllers/hotelReviewsController')
@@ -88,9 +92,6 @@ app.get('/logout', function(req, res) {
         res.redirect('/');
     });
 
-
-
-
 app.use('/', mainRouter);
 app.use('/newtrip', newtripRouter);
 app.use('/signin', signinRouter);
@@ -117,16 +118,14 @@ function isLoggedIn(req, res, next) {
 }
 
 // we require them to be logged in to see their profile
-app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
 
 console.log("before the users routes...")
 console.dir(usersController)
 app.get('/users', usersController.getAllUsers );
 app.get('/users/:id', usersController.getAllUsers );
+
+app.get('/profile', isLoggedIn, profileController.getProfile);
+app.post('/saveProfile', isLoggedIn, profileController.saveProfile );
 
 app.get('/sysUsers', isLoggedIn, sysUsersController.getAllUsers );
 app.post('/saveUser', isLoggedIn, sysUsersController.saveUser );
@@ -134,11 +133,17 @@ app.post('/deleteUser', isLoggedIn, sysUsersController.deleteUser );
 
 app.get('/reviews', isLoggedIn,reviewsController.getAllReviews );
 app.post('/saveReview', isLoggedIn, reviewsController.saveReview );
-app.post('/deleteReview', isLoggedIn, reviewsController.deleteReview );
+app.post('/deleteReview', isLoggedIn, flightController1.deleteReview );
+
+app.get('/flight',flightController.getAllReviews );
+app.get('/flight1',flightController1.getAllReviews );
+
+app.get('/hotel',hotelController.getAllHotelReviews );
+app.get('/hotel1',hotelController1.getAllHotelReviews );
 
 app.get('/hotelReviews', isLoggedIn, hotelReviewsController.getAllHotelReviews );
 app.post('/saveHotelReview', isLoggedIn, hotelReviewsController.saveHotelReview );
-app.post('/deleteHotelReview', isLoggedIn, hotelReviewsController.deleteHotelReview );
+app.post('/deleteHotelReview', isLoggedIn, hotelController1.deleteHotelReview );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

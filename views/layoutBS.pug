@@ -9,32 +9,40 @@ html(lang="en")
     link(rel='stylesheet', href='/stylesheets/style.css')
     block head
 
-
   body
     ul.nav.justify-content-end
         li.nav-item
-          a.nav-link.active(href="/") Home
+          a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/") Home
         li.nav-item
-          a.nav-link.active(href="/newtrip") Start a new trip
-          li.nav-item.dropdown
-            a#navbarDropdown.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Trip review
-            .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="/reviews") Flights
-              a.dropdown-item(href="/hotelReviews") Hotel
+          if loggedIn
+            if status=='0211'
+              a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/flight1") Flights
+            else 
+              a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/flight") Flights
+          else 
+            a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/flight") Flights
           li.nav-item
-            a#navbarDropdown.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") My account 
+            if loggedIn
+              if status=='0211'
+                a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/hotel1") Hotels
+              else 
+                a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/hotel") Hotels
+            else 
+              a.nav-link.active.text-dark.font-weight-bold.text-monospace(href="/hotel") Hotels
+          li.nav-item
+            a#navbarDropdown.nav-link.dropdown-toggle.text-dark.font-weight-bold.text-monospace(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") My account 
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="#") Profile
-              a.dropdown-item(href="#") Browse History 
-              a.dropdown-item(href="#") Favorate
-              a.dropdown-item(href="#") My Reviews 
+              a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="/profile") Profile
+              a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="#") Browse History 
+              a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="#") Favorate
+              a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="#") My Reviews 
               if loggedIn
                 if status=='0211'
-                  a.dropdown-item(href="/users") Google Users
-                  a.dropdown-item(href="/sysUsers") System Users
-                a.dropdown-item(href="/logout") Logout
+                  a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="/users") Google Users
+                  a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="/sysUsers") System Users
+                a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="/logout") Logout
               else
-                a.dropdown-item(href="/signin") Sign in
+                a.dropdown-item.text-dark.font-weight-bold.text-monospace(href="/signin") Sign in
     block content
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
