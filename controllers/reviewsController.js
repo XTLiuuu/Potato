@@ -29,7 +29,7 @@ exports.saveReview = ( req, res ) => {
   console.log("in saveReview!")
   console.dir(req)
   let newReview = new Review ({
-    user: req.user.googleemail,
+    email: req.user.googleemail,
     name: req.user.googlename,
     rating: req.body.rating,
     reviewTitle: req.body.reviewTitle,
@@ -58,4 +58,46 @@ exports.saveReview = ( req, res ) => {
     .catch( error => {
       res.send( error );
     } );
+};
+
+exports.attachReview = ( req, res, next ) => {
+  console.log('in attachEvidence')
+  Review.find( {email:res.locals.user.googleemail} )
+    .exec()
+    .then( ( review ) => {
+      res.locals.review = review
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( res.locals.review );
+      console.log( 'attachReview promise complete' );
+    } );
+};
+
+exports.deleteReview1 = (req, res) => {
+  console.log("in deleteReview")
+  let reviewName = req.body.reviewID
+  //check what reviews select to delete
+  if (typeof(reviewName)=='string') {
+      Review.deleteOne({_id:reviewName})
+           .exec()
+           .then(()=>{res.redirect('/myReviews')})
+           .catch((error)=>{res.send(error)})
+  } else if (typeof(reviewName)=='object'){
+      Review.deleteMany({id:{$in:reviewName}})
+           .exec()
+           .then(()=>{res.redirect('/myReviews')})
+           .catch((error)=>{res.send(error)})
+  } else if (typeof(reviewName)=='undefined'){
+      console.log("This is if they didn't select a review")
+      res.redirect('/myReviews')
+  } else {
+    console.log("This shouldn't happen!")
+    res.send(`unknown reviewName: ${reviewName}`)
+  }
+
 };

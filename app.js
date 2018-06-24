@@ -124,7 +124,7 @@ console.dir(usersController)
 app.get('/users', usersController.getAllUsers );
 app.get('/users/:id', usersController.getAllUsers );
 
-app.get('/profile', isLoggedIn, profileController.getProfile);
+app.get('/profile', isLoggedIn, profileController.attachProfile, profileController.getProfile);
 app.post('/saveProfile', isLoggedIn, profileController.saveProfile );
 
 app.get('/sysUsers', isLoggedIn, sysUsersController.getAllUsers );
@@ -140,6 +140,9 @@ app.get('/flight1',flightController1.getAllReviews );
 
 app.get('/hotel',hotelController.getAllHotelReviews );
 app.get('/hotel1',hotelController1.getAllHotelReviews );
+
+app.get('/myReviews', isLoggedIn, usersController.attachUser, reviewsController.attachReview, usersController.getUser);
+app.post('/deleteReview1', isLoggedIn, reviewsController.deleteReview1);
 
 app.get('/hotelReviews', isLoggedIn, hotelReviewsController.getAllHotelReviews );
 app.post('/saveHotelReview', isLoggedIn, hotelReviewsController.saveHotelReview );

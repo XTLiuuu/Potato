@@ -119,14 +119,14 @@ block content
             each review in reviews
               .jumbotron
                 input(name="deleteReview" value=review.reviewTitle type="checkbox")
-                i #{review.name} - (#{review.flightnumber}, From #{review.origin}, To #{review.destination})
+                i #{review.name} - (#{review.airline}, From #{review.origin}, To #{review.destination})
                 .row
                   .col-4
                     b #{review.reviewTitle}
                   .col-2 
                     b Rating: #{review.rating}
                   .col-5
-                    i  #{review.cabin} class, #{review.airline}
+                    i  #{review.cabin} class, #{review.flightnumber}
                 e Reviews: #{review.review}
                 br
                 e Photo: #{review.photo}

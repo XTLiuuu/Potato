@@ -48,3 +48,22 @@ exports.saveProfile = ( req, res ) => {
       res.send( error );
     } );
 };
+
+exports.attachProfile = ( req, res, next ) => {
+  console.log('in attachProfile')
+  const objId = new mongo.ObjectId(req.params.id)
+  Profile.findOne(objId) //{"_id": objId})
+    .exec()
+    .then( ( profile ) => {
+      res.locals.profile = req.profile
+      next()
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log(res.locals.user.googleemail);
+      console.log( 'attachProfile promise complete' );
+    } );
+};

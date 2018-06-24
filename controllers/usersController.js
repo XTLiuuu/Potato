@@ -28,7 +28,7 @@ exports.getUser = ( req, res ) => {
   User.findOne(objId) //{"_id": objId})
     .exec()
     .then( ( user ) => {
-      res.render( 'user', {
+      res.render( 'myReview', {
         user: user
       } );
     } )
@@ -47,7 +47,7 @@ exports.attachUser = ( req, res, next ) => {
   User.findOne(objId) //{"_id": objId})
     .exec()
     .then( ( user ) => {
-      res.locals.user = user
+      res.locals.user = req.user
       next()
     } )
     .catch( ( error ) => {
@@ -55,6 +55,7 @@ exports.attachUser = ( req, res, next ) => {
       return [];
     } )
     .then( () => {
+      console.log(res.locals.user.googleemail);
       console.log( 'attachUser promise complete' );
     } );
 };
