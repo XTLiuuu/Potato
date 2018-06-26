@@ -1,0 +1,37 @@
+extends layoutBS
+
+block content
+  .margin
+    .margin3
+      h2 Trip Planner
+
+      br
+      br
+      .container
+        .row
+          form.col-5
+            p.font-weight-bold Sign Into My Account
+            .form-group
+              label(for="exampleInputEmail1") Username
+              input#exampleInputEmail1.form-control(type="email" style="width:100%" aria-describedby="emailHelp" placeholder="Enter email")
+            .form-group
+              label(for="exampleInputPassword1") Password
+              input#exampleInputPassword1.form-control(type="password" style="width:100%" placeholder="Password")
+              a.badge.badge-secondary(href="http://www.brandeis.edu") Forgot your password
+            .form-group.form-check
+              input#exampleCheck1.form-check-input(type="checkbox")
+              label.form-check-label(for="exampleCheck1") Keep me signed in
+            button.btn.btn-primary(type="submit") Sign in
+          form.col-1
+          form.col-5
+            p.font-weight-bold Create New Account
+            .form-group
+              label(for="exampleInputEmail1") Username
+              input#exampleInputEmail1.form-control(type="email" style="width:100%" aria-describedby="emailHelp" placeholder="Enter email")
+            .form-group
+              label(for="exampleInputPassword1") Password
+              input#exampleInputPassword1.form-control(type="password" style="width:100%" placeholder="Password")
+            .form-group
+              label(for="exampleInputPassword1") Confirm password
+              input#exampleInputPassword1.form-control(type="password" style="width:100%" placeholder="Password")
+            button.btn.btn-primary(type="submit") Create account

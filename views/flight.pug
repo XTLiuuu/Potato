@@ -31,7 +31,11 @@ block content
               label(for="airline") Airline
               select.text-monospace#airline(name="airline").form-control
                 option(selected="") Choose...
+<<<<<<< HEAD
                 option Alaska
+=======
+                option Asiana Airline
+>>>>>>> cb92f59b455831b6b4a6debd306c8455ac5cd1cb
                 option Air New Zealand
                 option Air France
                 option Austrian Airlines
@@ -70,6 +74,7 @@ block content
         hr
         h5.font-weight-bold.text-monospace Best Airlines
         br
+<<<<<<< HEAD
         h6.text-monospace These are the best flights in U.S. based on 10 criteria, including airfare(25%), bag change fees(10%)
         br
         h6.text-monospace route network(15%), on-time arrivals(10%), cabin comfort(10%), customer satisfaction(10%), lost baggage(5%) and frequent flyer program(10%). 
@@ -88,6 +93,23 @@ block content
                 br
                 br
                 img.card-img-topimg(src='/images/alaska.jpg' width='70%')
+=======
+        .row
+          .col-4
+            #list-tab.list-group.text-monospace(role="tablist")
+              a#list-home-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list2-1" role="tab" aria-controls="home") Qatar Airways
+              a#list-profile-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-2" role="tab" aria-controls="profile") Lufthansa
+              a#list-messages-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-3" role="tab" aria-controls="messages") Etihad Airways
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-4" role="tab" aria-controls="settings") Singapore Airlines
+              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-5" role="tab" aria-controls="settings") South African Airways
+          .col-8
+            #nav-tabContent.text-monospace.tab-content
+              #list2-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-home-list")
+                | The best airline in the world, according to the AirHelp Score, is Qatar Airways, which landed a perfect 10 for quality of service, an 8.86 claim processing score, and an 89% on-time performance score.
+                br
+                br
+                img.card-img-topimg(src='/images/qatar.jpg' width='70%')
+>>>>>>> cb92f59b455831b6b4a6debd306c8455ac5cd1cb
               #list2-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
                 |The German airline came in second place thanks to its score of 10 for service and 8.63 for claim processing, beat out only due to it 76% punctuality score.
                 br

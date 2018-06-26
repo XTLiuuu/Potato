@@ -10,11 +10,15 @@
   background-color: blue;
   color:white;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb92f59b455831b6b4a6debd306c8455ac5cd1cb
 .margin {
   border-left: 0.1in;
   padding-left: 5mm;
   margin-left: 15px;
+<<<<<<< HEAD
   border-right: 0.1in;
   padding-right: 5mm;
   margin-right: 15px;
@@ -24,6 +28,8 @@
   opacity: 0.9;
   border-left: 0.1in;
   border-right: 0.1in;
+=======
+>>>>>>> cb92f59b455831b6b4a6debd306c8455ac5cd1cb
 }
 
 .margin1 {
@@ -38,6 +44,15 @@
   margin-top: 30px;
 }
 
+<<<<<<< HEAD
+=======
+.margin3 {
+  border-right: 0.1in;
+  padding-right: 5mm;
+  margin-right: 15px;
+}
+
+>>>>>>> cb92f59b455831b6b4a6debd306c8455ac5cd1cb
 .margin4 {
   border-bottom: : 0.2in;
   padding-bottom: : 10mm;
