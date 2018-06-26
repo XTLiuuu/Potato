@@ -1,0 +1,40 @@
+extends layoutBS
+
+block content
+    .body
+      .margin
+        h2.text-monospace Potato
+          .margin2
+        hr
+        br
+        h3.text-monospace.font-weight-bold My Reviews
+        br
+        form(method="post" action="deleteReview1")
+          ol
+            each r in review
+              .jumbotron
+                input(name="reviewID" value=r._id type="checkbox")
+                i #{r.name} - (#{r.airline}, From #{r.origin}, To #{r.destination})
+                .row
+                  .col-4
+                    b #{r.reviewTitle}
+                  .col-2 
+                    b Rating: #{r.rating}
+                  .col-5
+                    i  #{r.cabin} class, #{r.flightnumber}
+                e Reviews: #{r.review}
+                br
+                e Photo: #{r.photo}
+                br
+                b Other Info
+                br 
+                e Legroom: #{r.legroom} Seat Comfort: #{r.seatComfort}
+                br
+                e Cleaniess: #{r.cleaniess} Service: #{r.service}
+                br
+                e Food: #{r.food} Entertainment: #{r.entertainment}
+                br
+            input(type="submit" value="Delete checked items")
+            hr
+
+        

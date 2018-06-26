@@ -1,0 +1,94 @@
+extends layoutBS
+
+block content
+    .body
+      .margin
+        h2.text-monospace Potato
+          .margin2
+          hr
+          br
+          .jumbotron
+            h1 To Travel is To Live. 
+            hr
+            br
+            br
+            h6 Like all great travellers, I have seen more than I remember, and remember more than I have seen.
+             br
+            h6.text-right - Benjamin Disraeli
+             form(method="post")
+              br
+              .input-group.mb-3
+                input(name="place").form-control.text-monospace(type="text" placeholder="I want to go ..." length='40%' aria-label="Recipient's username" aria-describedby="basic-addon2")
+                .input-group-append
+                  button.btn.btn-warning.text-monospace(type="search") Search
+          br
+          br
+          h5.text-monospace Hot Destinations 
+          br
+          .container
+            .col
+            .container
+              .row
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Newyork.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace New York
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Sanfran.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace San Fransico
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/LasVegas.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Las Vegas
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+            br
+            br
+            .container
+              .row
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Miami.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Miami 
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Maui.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Maui
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Hawaii.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Hawaii
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+            br
+            .container
+              .row
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/Boston.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Boston 
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/NewOrleans.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace New Orleans
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+                .form.col-1
+                .card.col-3(style="width: 25rem;")
+                  img.card-img-topimg(src='/images/DC.jpg' width='100%')
+                  .card-body
+                    h5.card-title.text-monospace Washington, D.C.
+                    a.btn.btn-warning.btn-sm(href="#") Explore more
+            br
+            br
+            br
+          
+            

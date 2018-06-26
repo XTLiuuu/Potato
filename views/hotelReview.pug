@@ -1,0 +1,195 @@
+extends layoutBS
+
+block content
+    .body
+      .margin
+        h2.text-monospace Potato
+        .margin2
+        hr
+        br    
+        h4.text-monospace Hotel Review
+        br
+        br
+        form.text-monospace(method="post" action="saveHotelReview")
+          .form-row
+            .formGroup.col-2
+              label Overall Rating 
+            .formGroup.col-4
+              select(name="rating").form-control.form-control-sm
+                option(selected="") Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+          br
+          .form-row
+            .formGroup.col-2
+              label Review Title 
+            .formGroup.col-8
+              input.form-control.form-control-sm(type="text" name="reviewTitle" rows="1" placeholder="Please summarize your hotel visit")
+          br
+          br
+          .form-row
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-4
+                  label Hotel Name 
+                .formGroup.col-6
+                  input.form-control.form-control-sm(type="text" name="hotelName" placeholder="e.g. DoubleTree by Hilton")
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Hotel Brand
+                .formGroup.col-6 
+                  select(name="brand").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option Hilton
+                    option Sheraton
+                    option Westin
+                    option Four Seasons
+                    option Ritz-Carlton
+                    option Hyatt
+                    option Renaissance
+                    option Embassy Suites
+                    option InterContinental
+                    option JetBlue
+                    option Hyatt Regency
+                    option Shangri-La
+                    option Wyndham
+                    option Grant Hyatt
+                    option Fairmont
+                    option JW Marriot
+                    option Sofitel
+                    option Loews
+                    option Mandarin Oriental
+                    option Conrad
+                    option Peninsula
+          br
+          .form-row
+            .formGroup.col-6
+              .form-row
+                .form.col-4
+                  label City 
+                .form.col-6
+                  input.form-control.form-control-sm(type="text" name="city" placeholder="e.g. U.S.")
+            .formGroup.col-6
+                .form-row
+                  .form.col-3
+                    label State
+                  .form.col-6  
+                    input.form-control.form-control-sm(type="text" name="state" placeholder="e.g. New York")
+          br
+          .form-row
+            .formGroup.col-2
+              label Trip purpose 
+            .formGroup.col-4
+              select.form-control.form-control-sm(name="purpose").form-control
+                option(selected="") Choose...
+                option Business 
+                option Couples 
+                option Family 
+                option Friends
+                option Solo
+                option Other 
+          br
+          label Your review
+          br
+          textarea(name="review" rows="8" cols="80")
+          br
+          br
+          br
+          .form-row
+            .formGroup-col-3
+              label Do you have photos to share? 
+            .formGroup.col-6
+              input.form-control-file(type="file" name="photo")
+          br
+          br
+          h5.font-weight-bold.text-lg Would you like to provide more info? 
+          br
+          .form-row
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Service 
+                .formGroup.col-7
+                  select(name="service").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Location 
+                .formGroup.col-7
+                  select(name="location").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
+          .form-row
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Food 
+                .formGroup.col-7
+                  select(name="food").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Value
+                .formGroup.col-7
+                  select(name="value").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
+          .form-row
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-2
+                  label Cleanienss  
+                .formGroup.col-7
+                  select(name="cleanienss").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .formGroup.col-6
+              .form-row
+                .formGroup.col-3
+                  label Entertainment 
+                .formGroup.col-7
+                  select(name="entertainment").form-control.form-control-sm
+                    option(selected="") Choose...
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+          br
+          input.btn.btn-warning.btn-lg(type="submit" value="GO")
+        br
+        br
+        br
+        br
+        hr
+      
