@@ -7,7 +7,7 @@ block content
           .margin2
         hr
         br
-        h3.text-monospace.font-weight-bold My Reviews
+        h3.text-monospace.font-weight-bold My Flight Reviews
         br
         form(method="post" action="deleteReview1")
           ol
@@ -36,5 +36,37 @@ block content
                 br
             input(type="submit" value="Delete checked items")
             hr
-
-        
+            br
+            br
+        h3.text-monospace.font-weight-bold My Hotel Reviews
+        br
+        form(method="post" action="deleteHotelReview1")
+          ol
+            each h in hotelReview
+              .jumbotron
+                input(name="reviewID" value=h._id type="checkbox")
+                i #{h.name} - (#{h.hotelName}) - #{h.city}, #{h.state}
+                .row
+                  .col-4
+                    b #{h.reviewTitle}
+                  .col-2
+                    b Rating: #{h.rating}
+                  .col-5
+                    i #{h.hotelName}
+                e Travel Purpose: #{h.purpose}
+                br
+                e Reviews: #{h.review}
+                br
+                e Photo: #{h.photo}
+                br
+                b Other info:
+                br
+                e Service: #{h.service} Location: #{h.location} 
+                br
+                e Food: #{h.food} Value: #{h.value} 
+                br
+                e Cleanienss: #{h.cleanienss} Entertainment: #{h.entertainment} 
+                br
+                br
+              input(type="submit" value="Delete checked items")
+              hr

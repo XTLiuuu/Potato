@@ -37,7 +37,6 @@ exports.saveProfile = ( req, res ) => {
     dob: req.body.dob,
     fav: req.body.fav
   } )
-
   console.log("profile = "+ newProfile)
 
   newProfile.save()

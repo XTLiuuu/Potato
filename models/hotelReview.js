@@ -2,7 +2,7 @@
 const mongoose = require( 'mongoose' );
 
 var hotelReviewSchema = mongoose.Schema( {
-  user: String,
+  email: String,
   name: String,
   rating: Number,
   reviewTitle: String,

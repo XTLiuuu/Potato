@@ -10,4 +10,4 @@ var userSchema = mongoose.Schema( {
   googleemail:String,
 } );
 
-module.exports = mongoose.model( 'User', userSchema );
+module.exports = mongoose.model( 'user', userSchema );
