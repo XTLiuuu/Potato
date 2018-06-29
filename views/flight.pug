@@ -70,39 +70,58 @@ block content
         hr
         h5.font-weight-bold.text-monospace Best Airlines
         br
-        h6.text-monospace These are the best flights in U.S. based on 10 criteria, including airfare(25%), bag change fees(10%)
-          | route network(15%), on-time arrivals(10%), cabin comfort(10%), customer satisfaction(10%), lost baggage(5%) and frequent flyer program(10%). 
-        br
         .row
           .col-4
             #list-tab.list-group.text-monospace(role="tablist")
-              a#list-home-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list2-1" role="tab" aria-controls="home") Alaska Airlines 
-              a#list-profile-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-2" role="tab" aria-controls="profile") Southwest
-              a#list-messages-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-3" role="tab" aria-controls="messages") Delta
-              a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-4" role="tab" aria-controls="settings") United 
+              a#list-alaska-list.list-group-item.list-group-item-action.active(data-toggle="list" href="#list2-1" role="tab" aria-controls="alaska") Alaska Airlines 
+              a#list-hawaiian-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-2" role="tab" aria-controls="hawaiian") Hawaiian Airlines 
+              a#list-southwest-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-3" role="tab" aria-controls="southwest") Southwest Airlines
+              a#list-jetblue-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-4" role="tab" aria-controls="jetblue") JetBlue 
               a#list-settings-list.list-group-item.list-group-item-action(data-toggle="list" href="#list2-5" role="tab" aria-controls="settings") Frontier
           .col-8
             #nav-tabContent.text-monospace.tab-content
-              #list2-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-home-list")
-                | Alaska Airlines is at the top of our list. It is a favorite of its customers and ranked in the top 3 across airfaire, on-time arrivals, baggage handling, customer satisfaction, and its best-in-the-industry 
+              #list2-1.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="list-alaska-list")
+                | Alaska Airlines is a Seattle-based company and has been hugely popular with West Coast travelers. Its acquisition of Virgin America vastly extended its network. 
+                | The combined entity now ranks as the fifth-largest airline in the U.S., flying to more than 115 destinations; new routes cover spots like Mexico City, Philadelphia and Raleigh.
+                br
+                br
+                | Avg.price per roundtrip flight: $450
+                br
+                | Share of on-time arrivals: 85.29% 
                 br
                 br
                 img.card-img-topimg(src='/images/alaska.jpg' width='70%')
-              #list2-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-profile-list")
-                |The German airline came in second place thanks to its score of 10 for service and 8.63 for claim processing, beat out only due to it 76% punctuality score.
+              #list2-2.tab-pane.fade(role="tabpanel" aria-labelledby="list-hawaiian-list")
+                | Hawaiian Airlines is a leading provider of air service between the Hawaiian Islands with a total of more than 250 daily flights system-wide. It has led 
+                | all U.S. carriers in on-time performance for the past 14 years as reported by the U.S. Department of Transportation. In addition, it also has the fewest denied boarding rate. 
                 br
                 br
-                img.card-img-topimg(src='/images/lufthansa.jpg' width='70%')
-              #list2-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-messages-list")
-                |The UAE's Etihad is constantly named among the best airlines in the world, and with a score of 9 on service, 86% for punctuality, and 7.47 for claim processing, it's easy to see why.
+                | Avg.price per roundtrip flight: $625
+                br
+                | Share of on-time arrivals: 88.68% 
                 br
                 br
-                img.card-img-topimg(src='/images/etihad.jpg' width='60%')
-              #list2-4.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
-                |Set to launch the longest flight in the world at 19 hours from Singapore to New York, it's lucky Singapore's airline offers a full 10/10 for quality of service, as well as 85% on-time performance. Only its claim processing score — 6.77 — brought it down to fourth place this year.
+                img.card-img-topimg(src='/images/hawaiian.jpg' width='70%')
+              #list2-3.tab-pane.fade(role="tabpanel" aria-labelledby="list-southwest-list")
+                | Southwest Airlines provides scheduled air transportation in the United States and near-international markets. It provides its markets with frequent and conveniently timed flights 
+                | and low fares. Southwest's point-to-point route structure allows more direct nonstop routing. The company boasts the lowest rate of consumer complaints in the overall US Airline ratings. 
                 br
                 br
-                img.card-img-topimg(src='/images/singapore.jpg' width='70%')
+                | Avg.price per roundtrip flight: $415
+                br
+                | Share of on-time arrivals: 87.17% 
+                br
+                br
+                img.card-img-topimg(src='/images/southwest.jpg' width='70%')
+              #list2-4.tab-pane.fade(role="tabpanel" aria-labelledby="list-jetblue-list")
+                | JetBlue Airways is New York's Hometown Airline. It carried over 30 million passengers with an average of 800 daily flights and served 82 destinations in the United States, the Caribbean and Latin 
+                | America. JetBlue is famous for tis differentied product and culture (e.g. offering the most legroon in coach), competitive costs, and high value geography. 
+                br
+                br
+                | Avg.price per roundtrip flight: $414
+                br
+                | Share of on-time arrivals: 86.34% 
+                img.card-img-topimg(src='/images/JetBlue.jpg' width='70%')
               #list2-5.tab-pane.fade(role="tabpanel" aria-labelledby="list-settings-list")
                 | The 8.69 claim processing score, 8 on service, and 85% on-time performance put South Africa's airline in fifth place.
                 br
