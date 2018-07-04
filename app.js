@@ -124,7 +124,7 @@ console.dir(usersController)
 app.get('/users', usersController.getAllUsers );
 app.get('/users/:id', usersController.getAllUsers );
 
-app.get('/profile', isLoggedIn, profileController.attachProfile, profileController.getProfile);
+app.get('/profile', isLoggedIn, usersController.attachUser, profileController.attachProfile, profileController.getProfile);
 app.post('/saveProfile', isLoggedIn, profileController.saveProfile );
 
 app.get('/sysUsers', isLoggedIn, sysUsersController.getAllUsers );

@@ -14,26 +14,26 @@ block content
             .formGroup.col-md-4
               label Name
             .formGroup.col-md-6
-              input.form-control(name="name" type="text" value=user.googlename)
+              input.form-control(name="name" type="text" value=profile.name)
           br
           .row.text-monospace
             .formGroup.col-md-4
               label Email 
             .formGroup.col-md-6
-              input.form-control(name="email" type="email" value=user.googleemail)
+              input.form-control(name="email" type="email" value=profile.email)
           br
           .row.text-monospace
             .formGroup.col-md-4
               label Phone Number 
             .formGroup.col-md-6
-              input.form-control(name="phone" type="text")
+              input.form-control(name="phone" type="text" value=profile.phone)
           br
           .row.text-monospace
             .formGroup.col-md-4
               label Gender
             .formGroup.col-md-6
               select.text-monospace#airline(name="gender").form-control
-                option(selected="") Select
+                option(selected = "") #{profile.gender}
                 option Male
                 option Female
                 option Other
@@ -42,13 +42,13 @@ block content
             .formGroup.col-md-4
               label Date of Birth 
             .formGroup.col-md-6
-              input.form-control(name="dob" type="date")
+              input.form-control(name="dob" type="date" value=profile.dob)
           br
           .row.text-monospace
             .formGroup.col-md-4
               label Fav Destination 
             .formGroup.col-md-6
-              input.form-control(name="fav" type="text")
+              input.form-control(name="fav" type="text" value=profile.fav)
           br
           input.btn.btn-warning.btn-lg(type="submit" value="SAVE")
           br
