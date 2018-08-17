@@ -7,6 +7,8 @@ Link - http://leiner.cs-i.brandeis.edu:6500/
 - See popular destinations and flights on homepage
 - Post, delete reviews for hotels and flights 
 - See other people's reviews 
+- Google user login 
+- Profile management 
 
 # Built With 
 - Npm - Package management 
